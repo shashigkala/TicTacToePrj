@@ -46,12 +46,11 @@ public class TicTacToe {
 
 	private boolean isWinner() {
 		for (int i = 0; i < 3; i++) {
-			if (board[0][i] == lastPlayer && board[1][i] == lastPlayer && board[2][i] == lastPlayer) {
+			if (board[0][i] == lastPlayer && board[1][i] == lastPlayer && board[2][i] == lastPlayer
+					|| board[i][0] == lastPlayer && board[i][1] == lastPlayer && board[i][2] == lastPlayer) {
 				return true;
 			}
-			else if (board[i][0] == lastPlayer && board[i][1] == lastPlayer &&  board[i][2] == lastPlayer) {
-                return true;
-            }
+
 		}
 		return false;
 	}
