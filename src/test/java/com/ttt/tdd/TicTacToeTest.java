@@ -21,7 +21,6 @@ public class TicTacToeTest {
 	public static final Character SECOND_PLAYER = 'O';
 	public static final String FFIELD_IS_OCCUPIED = "Field is occupied!";
 
-
 	@Test
 	public void initializeNewTicTacToeGame() {
 		assertNotNull(ticTacToe);
@@ -48,6 +47,16 @@ public class TicTacToeTest {
 	public void givenLastTurnWasXWhenNextPlayerShouldBeO() {
 		ticTacToe.play(1, 1);
 		assertEquals(SECOND_PLAYER, ticTacToe.nextPlayer());
+	}
+
+	@Test
+	public void whenXValueIsOutSideTheBoard() {
+		Exception exception = assertThrows(TicTacToeException.class, () -> {
+			ticTacToe.play(5, 2);
+		});
+		String expectedMessage = "X value is outside the board!";
+		String actualMessage = exception.getMessage();
+		assertTrue(actualMessage.contains(expectedMessage));
 	}
 
 }
