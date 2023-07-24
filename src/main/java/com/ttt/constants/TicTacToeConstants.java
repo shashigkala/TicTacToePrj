@@ -10,4 +10,7 @@ public class TicTacToeConstants {
 	public static final String X_IS_THE_WINNER = "X is the Winner";
 	public static final String O_IS_THE_WINNER = "O is the Winner";
 	public static final String ALL_FIELDS_ARE_FILLED_SO_ITS_DRAW = "It is a draw";
+	public static final String NO_WINNER = "No winner";
+	public static int SIZE = 3;
+
 }
