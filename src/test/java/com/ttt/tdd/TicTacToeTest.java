@@ -93,8 +93,8 @@ public class TicTacToeTest {
 		String actual = ticTacToe.play(1, 3); // O
 		assertEquals(O_IS_THE_WINNER, actual);
 	}
-	
-	@Test	
+
+	@Test
 	public void playWithLeftDiagonal() {
 		ticTacToe.play(1, 1); // X
 		ticTacToe.play(1, 2); // O
@@ -103,15 +103,29 @@ public class TicTacToeTest {
 		String actual = ticTacToe.play(3, 3); // X
 		assertEquals(X_IS_THE_WINNER, actual);
 	}
-	
-	 @Test
-	    public void playWithRightDiagonal() {
-	        ticTacToe.play(1,3); // X
-	        ticTacToe.play(1,1); // O
-	        ticTacToe.play(2,2); // X
-	        ticTacToe.play(1,2); // O
-	        String actual = ticTacToe.play(3,1); // X
-	        assertEquals(X_IS_THE_WINNER, actual);
-	    }
+
+	@Test
+	public void playWithRightDiagonal() {
+		ticTacToe.play(1, 3); // X
+		ticTacToe.play(1, 1); // O
+		ticTacToe.play(2, 2); // X
+		ticTacToe.play(1, 2); // O
+		String actual = ticTacToe.play(3, 1); // X
+		assertEquals(X_IS_THE_WINNER, actual);
+	}
+
+	@Test
+	public void whenAllFieldsAreFilledThenDraw() {
+		ticTacToe.play(1, 1);
+		ticTacToe.play(1, 2);
+		ticTacToe.play(1, 3);
+		ticTacToe.play(2, 1);
+		ticTacToe.play(2, 3);
+		ticTacToe.play(2, 2);
+		ticTacToe.play(3, 1);
+		ticTacToe.play(3, 3);
+		String actual = ticTacToe.play(3, 2);
+		assertEquals("It is a draw", actual);
+	}
 
 }
