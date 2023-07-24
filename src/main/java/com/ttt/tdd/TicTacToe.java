@@ -14,5 +14,10 @@ public class TicTacToe {
 			board[column - 1][row - 1] = 'X';
 		}
 	}
+	
+	public char nextPlayer() {
+		return 'X';
+
+	}
 
 }
